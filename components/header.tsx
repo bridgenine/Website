@@ -1,0 +1,159 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Logo } from "@/components/logo";
+import { copyFor } from "@/lib/content";
+import {
+  normalizePath,
+  pagePath,
+  switchLangPath,
+  type PageId,
+} from "@/lib/paths";
+import type { Lang } from "@/lib/site";
+
+const pages: PageId[] = ["home", "about", "product", "contact"];
+
+export function Header({ lang }: { lang: Lang }) {
+  const copy = copyFor(lang);
+  const pathname = usePathname();
+  const current = normalizePath(pathname);
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const open = menuPath === current;
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const items = pages.map((id) => ({
+    id,
+    href: pagePath(lang, id),
+    label: copy.nav[id],
+  }));
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5">
+        <Logo lang={lang} />
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
+          {items.map((item) => {
+            const active = current === item.href;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`relative py-1 text-sm font-semibold ${
+                  active ? "text-navy" : "text-ink-soft hover:text-navy"
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute right-0 -bottom-1 left-0 h-0.5 bg-red ${
+                    active ? "scale-x-100" : "scale-x-0"
+                  }`}
+                  aria-hidden="true"
+                />
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="flex items-center gap-3">
+          <LanguageSwitch lang={lang} pathname={pathname} label={copy.nav.language} />
+          <Link
+            href={pagePath(lang, "contact")}
+            className="hidden min-h-10 items-center rounded-full bg-red px-4 text-sm font-bold text-white hover:bg-red-deep sm:inline-flex"
+          >
+            {copy.nav.demo}
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-navy md:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuPath(open ? null : current)}
+          >
+            <span className="sr-only">{open ? copy.nav.close : copy.nav.menu}</span>
+            <span className="flex w-4 flex-col gap-1.5" aria-hidden="true">
+              <span className="h-0.5 w-full bg-navy" />
+              <span className="h-0.5 w-2/3 bg-red" />
+            </span>
+          </button>
+        </div>
+      </div>
+      {open ? (
+        <div
+          id="mobile-nav"
+          className="fixed inset-0 z-50 flex flex-col bg-white px-6 py-5 md:hidden"
+        >
+          <div className="flex items-center justify-between">
+            <Logo lang={lang} />
+            <button
+              type="button"
+              className="inline-flex h-10 items-center rounded-full px-3 text-sm font-bold text-red"
+              onClick={() => setMenuPath(null)}
+            >
+              {copy.nav.close}
+            </button>
+          </div>
+          <nav className="mt-12 flex flex-col gap-5" aria-label="Primary">
+            {items.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="font-display text-4xl font-extrabold tracking-tight text-navy"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Link
+            href={pagePath(lang, "contact")}
+            className="mt-10 inline-flex min-h-12 w-fit items-center rounded-full bg-red px-5 text-sm font-bold text-white"
+          >
+            {copy.nav.demo}
+          </Link>
+        </div>
+      ) : null}
+    </header>
+  );
+}
+
+function LanguageSwitch({
+  lang,
+  pathname,
+  label,
+}: {
+  lang: Lang;
+  pathname: string;
+  label: string;
+}) {
+  const item = (code: Lang, text: string) => {
+    const active = lang === code;
+    return (
+      <Link
+        href={switchLangPath(pathname, code)}
+        hrefLang={code}
+        lang={code}
+        aria-current={active ? "true" : undefined}
+        className={`px-1 font-bold ${active ? "text-red" : "text-ink-soft hover:text-navy"}`}
+      >
+        {text}
+      </Link>
+    );
+  };
+
+  return (
+    <div className="flex items-center text-sm" aria-label={label}>
+      {item("en", "EN")}
+      <span className="text-line" aria-hidden="true">
+        /
+      </span>
+      {item("id", "ID")}
+    </div>
+  );
+}
