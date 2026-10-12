@@ -18,11 +18,11 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Bridgenine — On-prem software for Indonesian businesses",
+    default: "Bridgenine — Workflow automation and consulting",
     template: "%s · Bridgenine",
   },
   description:
-    "Bridgenine builds on-premises software that runs on the client server. Project Alpha is the current product.",
+    "Bridgenine provides workflow automation and consulting services. Project Alpha is a product for on-site invoice review.",
   applicationName: site.name,
   authors: [{ name: site.name }],
   creator: site.name,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Bridgenine — on-prem software for Indonesian businesses",
+        alt: "Bridgenine — workflow automation and consulting",
       },
     ],
   },
@@ -58,7 +58,7 @@ const organization = {
   url: site.url,
   logo: `${site.url}/logo.svg`,
   description:
-    "Bridgenine builds on-premises software for Indonesian businesses. Project Alpha is the current product.",
+    "Bridgenine provides workflow automation and consulting services. Project Alpha is one product.",
   knowsLanguage: ["en", "id"],
 };
 

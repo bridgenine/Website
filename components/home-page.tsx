@@ -1,13 +1,13 @@
 import { VerdictCard } from "@/components/verdict-card";
 import { Shell } from "@/components/shell";
 import { ButtonLink, Container, Kicker } from "@/components/ui";
-import { IconBuilding, IconServer, IconShield } from "@/components/icons";
+import { IconFile, IconFlow, IconUsers } from "@/components/icons";
 import { Mark } from "@/components/logo";
 import { copyFor, regulationTags } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
-const whatIcons = [IconServer, IconShield, IconBuilding];
+const whatIcons = [IconFlow, IconUsers, IconFile];
 
 export function HomePage({ lang }: { lang: Lang }) {
   const copy = copyFor(lang);

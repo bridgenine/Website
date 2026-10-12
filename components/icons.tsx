@@ -4,6 +4,17 @@ function base(className?: string) {
   return className ?? "h-6 w-6";
 }
 
+export function IconFlow({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={base(className)} aria-hidden="true" fill="none">
+      <circle cx="6" cy="6" r="2.2" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="18" cy="12" r="2.2" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="6" cy="18" r="2.2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 7.2 15.6 11M8 16.8 15.6 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconServer({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={base(className)} aria-hidden="true" fill="none">
