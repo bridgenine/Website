@@ -1,12 +1,13 @@
 import { VerdictCard } from "@/components/verdict-card";
 import { Shell } from "@/components/shell";
 import { ButtonLink, Container, Kicker } from "@/components/ui";
-import { IconFile, IconServer, IconShield } from "@/components/icons";
+import { IconBuilding, IconServer, IconShield } from "@/components/icons";
+import { Mark } from "@/components/logo";
 import { copyFor, regulationTags } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
-const whatIcons = [IconServer, IconFile, IconShield];
+const whatIcons = [IconServer, IconShield, IconBuilding];
 
 export function HomePage({ lang }: { lang: Lang }) {
   const copy = copyFor(lang);
@@ -27,20 +28,9 @@ export function HomePage({ lang }: { lang: Lang }) {
               </ButtonLink>
             </div>
           </div>
-          <VerdictCard lang={lang} />
-        </Container>
-      </section>
-
-      <section className="border-t border-line bg-paper" aria-label={regulationTags.join(", ")}>
-        <Container className="flex flex-wrap items-center gap-x-3 gap-y-2 py-4">
-          {regulationTags.map((tag, index) => (
-            <span key={tag} className="inline-flex items-center gap-3 text-sm font-semibold text-navy">
-              {index > 0 ? (
-                <span className="h-1 w-1 rounded-full bg-red" aria-hidden="true" />
-              ) : null}
-              {tag}
-            </span>
-          ))}
+          <div className="flex min-h-72 items-center justify-center rounded-3xl border border-line bg-paper text-navy">
+            <Mark className="h-24 w-36" />
+          </div>
         </Container>
       </section>
 
@@ -80,27 +70,16 @@ export function HomePage({ lang }: { lang: Lang }) {
             <ButtonLink href={pagePath(lang, "product")} variant="ghost" className="mt-8">
               {home.highlightLink}
             </ButtonLink>
+            <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2" aria-label={regulationTags.join(", ")}>
+              {regulationTags.map((tag, index) => (
+                <li key={tag} className="inline-flex items-center gap-3 text-sm font-semibold text-navy">
+                  {index > 0 ? <span className="h-1 w-1 rounded-full bg-red" aria-hidden="true" /> : null}
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="grid gap-3">
-            {(["pass", "warning", "fail"] as const).map((status) => (
-              <li
-                key={status}
-                className="flex items-center justify-between rounded-2xl border border-line bg-white px-5 py-4"
-              >
-                <span
-                  className={`font-display text-2xl font-extrabold ${
-                    status === "fail" ? "text-red" : "text-navy"
-                  }`}
-                >
-                  {copy.status[status]}
-                </span>
-                <span
-                  className={`h-2 w-8 rounded-full ${status === "pass" ? "bg-navy" : "bg-red"}`}
-                  aria-hidden="true"
-                />
-              </li>
-            ))}
-          </ul>
+          <VerdictCard lang={lang} />
         </Container>
       </section>
 

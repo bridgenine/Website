@@ -1,6 +1,6 @@
 # Bridgenine
 
-Company site for [www.bridgenine.com](https://www.bridgenine.com). It presents Bridgenine and Project Alpha, a self-hosted, fully offline AI compliance review system for Indonesian invoices.
+Company site for [www.bridgenine.com](https://www.bridgenine.com). Bridgenine builds on-premises software for Indonesian businesses. Project Alpha is the current product: a self-hosted, fully offline review system for Indonesian invoices.
 
 Pages:
 

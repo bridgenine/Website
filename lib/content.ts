@@ -124,15 +124,15 @@ export const dictionary: Record<Lang, Copy> = {
     },
     skip: "Skip to content",
     footer: {
-      line: "On-prem compliance software for Indonesian businesses.",
+      line: "On-prem software for Indonesian businesses.",
     },
     status: { pass: "Pass", warning: "Warning", fail: "Fail" },
     home: {
-      kicker: "Fully offline",
-      title: "Indonesian invoices. Checked on-site.",
-      lede: "Project Alpha runs on your server.",
+      kicker: "On your server",
+      title: "Software that stays in the building.",
+      lede: "Bridgenine builds on-premises software for Indonesian businesses.",
       primary: "Request a demo",
-      secondary: "See the product",
+      secondary: "See Project Alpha",
       whatTitle: "What Bridgenine does",
       what: [
         {
@@ -140,29 +140,29 @@ export const dictionary: Record<Lang, Copy> = {
           body: "Installed at the client premises.",
         },
         {
-          title: "Read locally",
-          body: "PDF, scan, or photo.",
+          title: "Offline by design",
+          body: "Work runs on the client machine.",
         },
         {
-          title: "Check locally",
-          body: "Tax rules and KBLI 2020 codes.",
+          title: "Project Alpha",
+          body: "The product Bridgenine ships today.",
         },
       ],
-      highlightKicker: "Project Alpha",
-      highlightTitle: "Pass, warning, or fail.",
-      highlightBody: "Plain explanations, dashboards, and reports.",
+      highlightKicker: "One product",
+      highlightTitle: "Project Alpha reviews invoices.",
+      highlightBody: "Offline checks against Indonesian tax rules and KBLI 2020. Pass, warning, or fail.",
       highlightLink: "Explore Project Alpha",
       ctaTitle: "See it on your server.",
       ctaBody: "Ask for a demo of Project Alpha.",
     },
     about: {
       kicker: "About",
-      title: "A bridge between invoices and the rules.",
-      lede: "Self-hosted compliance software for Indonesian businesses.",
+      title: "On-prem software for Indonesian businesses.",
+      lede: "Bridgenine builds software that runs on the client server.",
       points: [
         { title: "On-premises", body: "Software runs on the client server." },
-        { title: "Offline", body: "Invoice data is not sent to a cloud AI." },
-        { title: "Project Alpha", body: "The product Bridgenine ships today." },
+        { title: "Offline", body: "Client data is not sent to a cloud AI." },
+        { title: "Project Alpha", body: "The current product. It reviews invoices on-site." },
       ],
       placeholderLabel: "Placeholder",
       placeholderTitle: "Company profile",
@@ -171,7 +171,7 @@ export const dictionary: Record<Lang, Copy> = {
     product: {
       kicker: "Project Alpha",
       title: "AI compliance review. Fully offline.",
-      lede: "For Indonesian invoices. Data stays on the client server.",
+      lede: "A Bridgenine product for Indonesian invoices. Data stays on the client server.",
       problemTitle: "The problem",
       problems: [
         {
@@ -244,7 +244,7 @@ export const dictionary: Record<Lang, Copy> = {
       companyPlaceholder: "Company name",
       emailPlaceholder: "name@company.com",
       phonePlaceholder: "+62…",
-      messagePlaceholder: "What should we review?",
+      messagePlaceholder: "How can we help?",
       submit: "Send request",
       sending: "Sending…",
       sent: "Sent. We will reply about a demo.",
@@ -266,14 +266,14 @@ export const dictionary: Record<Lang, Copy> = {
     },
     meta: {
       home: {
-        title: "Bridgenine — On-prem AI compliance for Indonesia",
+        title: "Bridgenine — On-prem software for Indonesian businesses",
         description:
-          "Bridgenine builds Project Alpha, a self-hosted offline system that reviews Indonesian invoices against tax rules and KBLI codes. Data stays on your server.",
+          "Bridgenine builds on-premises software that runs on the client server. Project Alpha is the current product.",
       },
       about: {
         title: "About",
         description:
-          "Bridgenine builds self-hosted compliance software for Indonesian businesses. The product is Project Alpha.",
+          "Bridgenine builds self-hosted software for Indonesian businesses. Project Alpha is the product.",
       },
       product: {
         title: "Project Alpha",
@@ -282,8 +282,7 @@ export const dictionary: Record<Lang, Copy> = {
       },
       contact: {
         title: "Contact",
-        description:
-          "Request a demo of Project Alpha, Bridgenine’s on-prem invoice compliance system.",
+        description: "Request a demo from Bridgenine.",
       },
     },
   },
@@ -300,36 +299,36 @@ export const dictionary: Record<Lang, Copy> = {
     },
     skip: "Loncat ke isi",
     footer: {
-      line: "Perangkat lunak kepatuhan on-prem untuk bisnis Indonesia.",
+      line: "Perangkat lunak on-prem untuk bisnis Indonesia.",
     },
     status: { pass: "Lulus", warning: "Peringatan", fail: "Gagal" },
     home: {
-      kicker: "Sepenuhnya offline",
-      title: "Faktur Indonesia. Diperiksa di tempat.",
-      lede: "Project Alpha berjalan di server Anda.",
+      kicker: "Di server Anda",
+      title: "Perangkat lunak yang tetap di gedung.",
+      lede: "Bridgenine membuat perangkat lunak on-prem untuk bisnis Indonesia.",
       primary: "Minta demo",
-      secondary: "Lihat produk",
+      secondary: "Lihat Project Alpha",
       whatTitle: "Yang Bridgenine kerjakan",
       what: [
         { title: "Di server Anda", body: "Dipasang di lokasi klien." },
-        { title: "Dibaca secara lokal", body: "PDF, pindaian, atau foto." },
-        { title: "Dicek secara lokal", body: "Aturan pajak dan kode KBLI 2020." },
+        { title: "Offline sejak awal", body: "Pekerjaan berjalan di mesin klien." },
+        { title: "Project Alpha", body: "Produk yang Bridgenine buat saat ini." },
       ],
-      highlightKicker: "Project Alpha",
-      highlightTitle: "Lulus, peringatan, atau gagal.",
-      highlightBody: "Penjelasan yang mudah, dasbor, dan laporan.",
+      highlightKicker: "Satu produk",
+      highlightTitle: "Project Alpha meninjau faktur.",
+      highlightBody: "Pemeriksaan offline terhadap aturan pajak Indonesia dan KBLI 2020. Lulus, peringatan, atau gagal.",
       highlightLink: "Jelajahi Project Alpha",
       ctaTitle: "Lihat di server Anda.",
       ctaBody: "Minta demo Project Alpha.",
     },
     about: {
       kicker: "Tentang",
-      title: "Jembatan antara faktur dan aturan.",
-      lede: "Perangkat lunak kepatuhan yang dihosting sendiri untuk bisnis Indonesia.",
+      title: "Perangkat lunak on-prem untuk bisnis Indonesia.",
+      lede: "Bridgenine membuat perangkat lunak yang berjalan di server klien.",
       points: [
         { title: "On-premises", body: "Perangkat lunak berjalan di server klien." },
-        { title: "Offline", body: "Data faktur tidak dikirim ke AI cloud." },
-        { title: "Project Alpha", body: "Produk yang Bridgenine buat saat ini." },
+        { title: "Offline", body: "Data klien tidak dikirim ke AI cloud." },
+        { title: "Project Alpha", body: "Produk saat ini. Meninjau faktur di tempat." },
       ],
       placeholderLabel: "Placeholder",
       placeholderTitle: "Profil perusahaan",
@@ -338,7 +337,7 @@ export const dictionary: Record<Lang, Copy> = {
     product: {
       kicker: "Project Alpha",
       title: "Tinjauan kepatuhan AI. Sepenuhnya offline.",
-      lede: "Untuk faktur Indonesia. Data tetap di server klien.",
+      lede: "Produk Bridgenine untuk faktur Indonesia. Data tetap di server klien.",
       problemTitle: "Masalahnya",
       problems: [
         { title: "Cek manual lambat", body: "Faktur menumpuk. Aturan pajak mudah terlewat." },
@@ -405,7 +404,7 @@ export const dictionary: Record<Lang, Copy> = {
       companyPlaceholder: "Nama perusahaan",
       emailPlaceholder: "nama@perusahaan.com",
       phonePlaceholder: "+62…",
-      messagePlaceholder: "Apa yang ingin ditinjau?",
+      messagePlaceholder: "Ada yang bisa kami bantu?",
       submit: "Kirim permintaan",
       sending: "Mengirim…",
       sent: "Terkirim. Kami akan membalas untuk demo.",
@@ -427,14 +426,14 @@ export const dictionary: Record<Lang, Copy> = {
     },
     meta: {
       home: {
-        title: "Bridgenine — Kepatuhan AI on-prem untuk Indonesia",
+        title: "Bridgenine — Perangkat lunak on-prem untuk bisnis Indonesia",
         description:
-          "Bridgenine membuat Project Alpha, sistem offline yang dihosting sendiri untuk meninjau faktur Indonesia terhadap aturan pajak dan kode KBLI. Data tetap di server Anda.",
+          "Bridgenine membuat perangkat lunak on-prem yang berjalan di server klien. Project Alpha adalah produk saat ini.",
       },
       about: {
         title: "Tentang",
         description:
-          "Bridgenine membuat perangkat lunak kepatuhan yang dihosting sendiri untuk bisnis Indonesia. Produknya adalah Project Alpha.",
+          "Bridgenine membuat perangkat lunak yang dihosting sendiri untuk bisnis Indonesia. Produknya adalah Project Alpha.",
       },
       product: {
         title: "Project Alpha",
@@ -443,7 +442,7 @@ export const dictionary: Record<Lang, Copy> = {
       },
       contact: {
         title: "Kontak",
-        description: "Minta demo Project Alpha, sistem kepatuhan faktur on-prem dari Bridgenine.",
+        description: "Minta demo dari Bridgenine.",
       },
     },
   },
