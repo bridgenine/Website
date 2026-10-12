@@ -4,18 +4,18 @@ import { Shell } from "@/components/shell";
 import { ButtonLink, Container, Kicker, PageIntro } from "@/components/ui";
 import { copyFor } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
-import { site, type Lang } from "@/lib/site";
+import { site } from "@/lib/site";
 
-export function ProductPage({ lang }: { lang: Lang }) {
-  const product = copyFor(lang).product;
+export function ProductPage() {
+  const product = copyFor().product;
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Project Alpha",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Self-hosted",
-    url: `${site.url}${pagePath(lang, "product")}`,
-    description: copyFor(lang).meta.product.description,
+    url: `${site.url}${pagePath("product")}`,
+    description: copyFor().meta.product.description,
     provider: {
       "@type": "Organization",
       name: site.name,
@@ -24,19 +24,19 @@ export function ProductPage({ lang }: { lang: Lang }) {
   };
 
   return (
-    <Shell lang={lang}>
+    <Shell>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <PageIntro kicker={product.kicker} title={product.title} lede={product.lede} />
       <Container className="pb-4">
-        <Link href={pagePath(lang, "solutions")} className="text-sm font-bold text-red">
-          {copyFor(lang).nav.solutions}
+        <Link href={pagePath("solutions")} className="text-sm font-bold text-red">
+          {copyFor().nav.solutions}
         </Link>
       </Container>
       <Container className="max-w-xl pb-8">
-        <VerdictCard lang={lang} />
+        <VerdictCard />
       </Container>
 
       <section className="bg-white">
@@ -122,7 +122,7 @@ export function ProductPage({ lang }: { lang: Lang }) {
           <div className="max-w-2xl border-t-2 border-red pt-6">
             <h2 className="type-section text-navy">{product.ctaTitle}</h2>
             <p className="measure mt-3 text-ink-soft">{product.ctaBody}</p>
-            <ButtonLink href={pagePath(lang, "contact")} className="mt-8">
+            <ButtonLink href={pagePath("contact")} className="mt-8">
               {product.ctaTitle}
             </ButtonLink>
           </div>

@@ -11,12 +11,11 @@ import {
   type ContactErrorCode,
   type ContactField,
 } from "@/lib/contact";
-import type { Lang } from "@/lib/site";
 
 const fields: ContactField[] = ["name", "company", "email", "phone", "message"];
 
-export function ContactForm({ lang }: { lang: Lang }) {
-  const copy = copyFor(lang).contact;
+export function ContactForm() {
+  const copy = copyFor().contact;
   const baseId = useId();
   const [values, setValues] = useState({
     name: "",
@@ -54,7 +53,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
       return;
     }
 
-    const payload = { ...values, lang };
+    const payload = { ...values };
 
     if (contactEndpoint()) {
       setStatus("sending");

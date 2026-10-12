@@ -1,4 +1,3 @@
-import type { Lang } from "@/lib/site";
 import type { PageId } from "@/lib/paths";
 
 export const regulationTags = [
@@ -27,7 +26,6 @@ type Copy = {
     demo: string;
     menu: string;
     close: string;
-    language: string;
   };
   skip: string;
   footer: { line: string };
@@ -133,8 +131,7 @@ type Copy = {
   meta: Record<PageId, { title: string; description: string }>;
 };
 
-export const dictionary: Record<Lang, Copy> = {
-  en: {
+export const copy: Copy = {
     nav: {
       home: "Home",
       about: "About",
@@ -145,7 +142,6 @@ export const dictionary: Record<Lang, Copy> = {
       demo: "Talk with us",
       menu: "Menu",
       close: "Close",
-      language: "Language",
     },
     skip: "Skip to content",
     footer: {
@@ -345,206 +341,8 @@ export const dictionary: Record<Lang, Copy> = {
         description: "Talk with Bridgenine about consulting, workflow automation, or Project Alpha.",
       },
     },
-  },
-  id: {
-    nav: {
-      home: "Beranda",
-      about: "Tentang",
-      services: "Layanan",
-      solutions: "Solusi",
-      product: "Project Alpha",
-      contact: "Kontak",
-      demo: "Hubungi kami",
-      menu: "Menu",
-      close: "Tutup",
-      language: "Bahasa",
-    },
-    skip: "Loncat ke isi",
-    footer: {
-      line: "Konsultasi dan otomatisasi alur kerja.",
-    },
-    status: { pass: "Lulus", warning: "Peringatan", fail: "Gagal" },
-    home: {
-      kicker: "Firma konsultasi",
-      title: "Konsultasi, dan banyak otomatisasi alur kerja.",
-      lede: "Saran bisnis dan proses, otomatisasi, serta implementasi.",
-      primary: "Hubungi kami",
-      secondary: "Lihat layanan",
-      whatTitle: "Yang Bridgenine kerjakan",
-      what: [
-        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
-        { title: "Otomatisasi alur kerja", body: "Termasuk otomatisasi berbantuan AI." },
-        { title: "Implementasi", body: "Kami dampingi sampai penerapan." },
-      ],
-      servicesLink: "Semua layanan",
-      solutionsKicker: "Solusi",
-      solutionsTitle: "Project Alpha adalah salah satu solusi.",
-      solutionsBody: "Tinjauan faktur di tempat. Penawaran lain bisa berdampingan.",
-      solutionsLink: "Lihat solusi",
-      ctaTitle: "Ceritakan pekerjaannya.",
-      ctaBody: "Konsultasi, otomatisasi, implementasi, atau demo Project Alpha.",
-    },
-    about: {
-      kicker: "Tentang",
-      title: "Firma konsultasi yang mengotomatisasi pekerjaan.",
-      lede: "Saran bisnis dan proses, lalu alur kerja termasuk otomatisasi berbantuan AI, dan implementasi.",
-      points: [
-        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
-        { title: "Otomatisasi alur kerja", body: "Pekerjaan berulang, termasuk berbantuan AI." },
-        { title: "Implementasi", body: "Perubahan dibawa ke operasi harian." },
-      ],
-      placeholderLabel: "Placeholder",
-      placeholderTitle: "Profil perusahaan",
-      placeholderBody: "Tambahkan legalitas, kantor, dan tim di sini.",
-    },
-    services: {
-      kicker: "Layanan",
-      title: "Konsultasi dan otomatisasi alur kerja.",
-      lede: "Cara Bridgenine bekerja dengan sebuah tim.",
-      items: [
-        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
-        { title: "Otomatisasi alur kerja", body: "Otomatisasi pekerjaan berulang, termasuk dengan AI." },
-        { title: "Implementasi", body: "Cara kerja baru dijalankan di lapangan." },
-      ],
-      placeholderLabel: "Placeholder",
-      placeholderTitle: "Contoh pekerjaan",
-      placeholderBody: "Tambahkan proyek nyata di sini. Belum ada klien contoh.",
-    },
-    solutions: {
-      kicker: "Solusi",
-      title: "Produk dan solusi.",
-      lede: "Project Alpha adalah salah satu solusi Bridgenine.",
-      productTitle: "Project Alpha",
-      productBody: "Tinjauan faktur offline yang dihosting sendiri.",
-      productLink: "Buka Project Alpha",
-      placeholderLabel: "Placeholder",
-      placeholderTitle: "Solusi lain",
-      placeholderBody: "Tambahkan penawaran berikutnya di sini.",
-    },
-    product: {
-      kicker: "Project Alpha",
-      title: "Tinjauan kepatuhan AI. Sepenuhnya offline.",
-      lede: "Produk Bridgenine untuk faktur Indonesia. Data tetap di server klien.",
-      problemTitle: "Masalahnya",
-      problems: [
-        { title: "Cek manual lambat", body: "Faktur menumpuk. Aturan pajak mudah terlewat." },
-        { title: "AI cloud berisiko", body: "Data faktur dan pajak keluar dari gedung." },
-      ],
-      howTitle: "Cara kerjanya",
-      steps: [
-        { title: "Unggah", body: "PDF, pindaian, atau foto." },
-        { title: "Baca", body: "OCR lokal dan model open-source lokal." },
-        { title: "Periksa", body: "Aturan pajak Indonesia dan kode KBLI 2020 yang terdaftar." },
-        { title: "Laporkan", body: "Lulus, peringatan, atau gagal. Dasbor, PDF, dan Excel." },
-      ],
-      featuresTitle: "Yang diperiksa",
-      features: [
-        "PPN, termasuk 12% dan DPP nilai lain",
-        "PPh 23, PPh 4(2), dan PPh 22",
-        "Kolom NPWP dan e-Faktur",
-        "Total faktur",
-        "Faktur duplikat",
-        "Kode usaha KBLI 2020",
-        "Penjelasan bahasa sederhana",
-        "Dasbor",
-        "Laporan PDF dan Excel",
-      ],
-      privacyTitle: "Data tetap di tempat",
-      privacyBody: "Dihosting sendiri. Sepenuhnya offline.",
-      privacy: [
-        "Dipasang di server klien",
-        "Tanpa perjalanan ke cloud",
-        "Data faktur dan pajak tidak pernah keluar dari lokasi",
-      ],
-      audienceTitle: "Untuk siapa",
-      audiences: [
-        { title: "Tim keuangan", body: "Penerimaan dan tinjauan faktur." },
-        { title: "Tim pajak", body: "Kolom PPN, PPh, NPWP, dan e-Faktur." },
-        { title: "Perusahaan on-prem", body: "Tim yang tidak boleh mengirim data faktur ke luar." },
-      ],
-      ctaTitle: "Minta demo",
-      ctaBody: "Kami tunjukkan Project Alpha di lingkungan Anda.",
-    },
-    illustration: {
-      label: "Ilustrasi",
-      caption: "Contoh layar. Bukan hasil pelanggan.",
-      invoice: "INV-SAMPLE",
-      rows: [
-        { label: "PPN 12%", status: "pass", note: "Tarif sesuai" },
-        { label: "DPP nilai lain", status: "pass", note: "Kolom ada" },
-        { label: "PPh 23", status: "warning", note: "Tarif beda" },
-        { label: "NPWP", status: "fail", note: "Format belum lengkap" },
-        { label: "Duplikat", status: "warning", note: "Kemungkinan ganda" },
-        { label: "KBLI 2020", status: "pass", note: "Kode sesuai" },
-      ],
-    },
-    contact: {
-      kicker: "Kontak",
-      title: "Hubungi kami",
-      lede: "Otomatisasi, konsultasi, atau demo Project Alpha.",
-      name: "Nama",
-      company: "Perusahaan",
-      email: "Email",
-      phone: "Telepon / WhatsApp",
-      message: "Pesan",
-      namePlaceholder: "Nama Anda",
-      companyPlaceholder: "Nama perusahaan",
-      emailPlaceholder: "nama@perusahaan.com",
-      phonePlaceholder: "+62…",
-      messagePlaceholder: "Ada yang bisa kami bantu?",
-      submit: "Kirim permintaan",
-      sending: "Mengirim…",
-      sent: "Terkirim. Kami akan membalas.",
-      mailto: "Aplikasi email Anda akan terbuka dengan permintaan ini.",
-      unconfigured: "Formulir ini belum terhubung ke kotak masuk. Pesan tidak terkirim.",
-      failed: "Pengiriman gagal. Coba lagi.",
-      errors: {
-        required: "Wajib diisi.",
-        email: "Masukkan email yang valid.",
-        phone: "Masukkan nomor telepon atau WhatsApp.",
-        short: "Tulis pesan singkat.",
-      },
-      nextTitle: "Berikutnya",
-      next: [
-        "Anda mengirim catatan",
-        "Kami membalas",
-        "Kami susun ruang lingkupnya bersama",
-      ],
-    },
-    meta: {
-      home: {
-        title: "Bridgenine — Konsultasi dan otomatisasi alur kerja",
-        description:
-          "Bridgenine adalah firma konsultasi untuk bisnis dan proses, otomatisasi alur kerja, otomatisasi berbantuan AI, dan implementasi. Project Alpha adalah salah satu solusi.",
-      },
-      about: {
-        title: "Tentang",
-        description:
-          "Bridgenine memberi konsultasi cara kerja, mengotomatisasi alur kerja, dan mendampingi implementasi. Project Alpha adalah salah satu solusi.",
-      },
-      services: {
-        title: "Layanan",
-        description:
-          "Layanan Bridgenine: konsultasi bisnis dan proses, otomatisasi alur kerja termasuk berbantuan AI, dan implementasi.",
-      },
-      solutions: {
-        title: "Solusi",
-        description:
-          "Solusi Bridgenine. Project Alpha adalah salah satunya: tinjauan faktur offline yang dihosting sendiri.",
-      },
-      product: {
-        title: "Project Alpha",
-        description:
-          "Project Alpha adalah sistem tinjauan kepatuhan AI yang dihosting sendiri dan sepenuhnya offline untuk faktur, aturan pajak, dan kode KBLI 2020.",
-      },
-      contact: {
-        title: "Kontak",
-        description: "Hubungi Bridgenine untuk konsultasi, otomatisasi alur kerja, atau Project Alpha.",
-      },
-    },
-  },
 };
 
-export function copyFor(lang: Lang) {
-  return dictionary[lang];
+export function copyFor() {
+  return copy;
 }

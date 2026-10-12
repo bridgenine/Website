@@ -2,13 +2,12 @@ import { Shell } from "@/components/shell";
 import { ButtonLink, Container, PageIntro } from "@/components/ui";
 import { copyFor } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
-import type { Lang } from "@/lib/site";
 
-export function ServicesPage({ lang }: { lang: Lang }) {
-  const services = copyFor(lang).services;
+export function ServicesPage() {
+  const services = copyFor().services;
 
   return (
-    <Shell lang={lang}>
+    <Shell>
       <PageIntro kicker={services.kicker} title={services.title} lede={services.lede} />
       <Container className="pb-16">
         <div className="grid gap-4 md:grid-cols-3">
@@ -30,8 +29,8 @@ export function ServicesPage({ lang }: { lang: Lang }) {
             <h2 className="type-title mt-3 text-navy">{services.placeholderTitle}</h2>
             <p className="measure mt-2 text-ink-soft">{services.placeholderBody}</p>
           </div>
-          <ButtonLink href={pagePath(lang, "contact")} className="mt-8">
-            {copyFor(lang).nav.demo}
+          <ButtonLink href={pagePath("contact")} className="mt-8">
+            {copyFor().nav.demo}
           </ButtonLink>
         </Container>
       </section>

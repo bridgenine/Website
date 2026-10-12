@@ -1,5 +1,3 @@
-import type { Lang } from "@/lib/site";
-
 /**
  * Contact delivery
  * ----------------
@@ -21,7 +19,7 @@ import type { Lang } from "@/lib/site";
  *     app with a filled-in draft (mailto). Replace the placeholder address.
  *
  * JSON body:
- *   { name, company, email, phone, message, lang, _subject, access_key? }
+ *   { name, company, email, phone, message, _subject, access_key? }
  *
  * If nothing is configured, the form validates and then tells the visitor the
  * message was not sent.
@@ -39,9 +37,7 @@ export type ContactInput = {
   message: string;
 };
 
-export type ContactPayload = ContactInput & {
-  lang: Lang;
-};
+export type ContactPayload = ContactInput;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -90,7 +86,6 @@ export function mailtoHref(email: string, payload: ContactPayload) {
       `Company: ${payload.company.trim()}`,
       `Email: ${payload.email.trim()}`,
       `Phone / WhatsApp: ${payload.phone.trim()}`,
-      `Language: ${payload.lang}`,
       "",
       payload.message.trim(),
     ].join("\n"),
@@ -113,7 +108,6 @@ export async function sendContact(payload: ContactPayload) {
       email: payload.email.trim(),
       phone: payload.phone.trim(),
       message: payload.message.trim(),
-      lang: payload.lang,
       _subject: "Bridgenine demo request",
       ...(accessKey ? { access_key: accessKey } : {}),
     }),

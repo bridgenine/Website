@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { copyFor } from "@/lib/content";
 import { pagePath, type PageId } from "@/lib/paths";
-import { site, type Lang } from "@/lib/site";
+import { site } from "@/lib/site";
 
 function absolute(path: string) {
   if (path === "/") return `${site.url}/`;
@@ -15,32 +15,23 @@ const shareImage = {
   alt: "Bridgenine — consulting and workflow automation",
 };
 
-export function metadataFor(lang: Lang, page: PageId): Metadata {
-  const meta = copyFor(lang).meta[page];
-  const path = pagePath(lang, page);
-  const en = absolute(pagePath("en", page));
-  const id = absolute(pagePath("id", page));
-  const title =
-    page === "home" ? { absolute: meta.title } : meta.title;
+export function metadataFor(page: PageId): Metadata {
+  const meta = copyFor().meta[page];
+  const path = pagePath(page);
+  const title = page === "home" ? { absolute: meta.title } : meta.title;
 
   return {
     title,
     description: meta.description,
     alternates: {
       canonical: absolute(path),
-      languages: {
-        en,
-        id,
-        "x-default": en,
-      },
     },
     openGraph: {
       title: meta.title,
       description: meta.description,
       url: absolute(path),
       siteName: site.name,
-      locale: lang === "id" ? "id_ID" : "en_US",
-      alternateLocale: lang === "id" ? ["en_US"] : ["id_ID"],
+      locale: "en_US",
       type: "website",
       images: [shareImage],
     },

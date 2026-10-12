@@ -3,14 +3,13 @@ import { ButtonLink, Container, PageIntro } from "@/components/ui";
 import { Mark } from "@/components/logo";
 import { copyFor } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
-import type { Lang } from "@/lib/site";
 
-export function AboutPage({ lang }: { lang: Lang }) {
-  const copy = copyFor(lang);
+export function AboutPage() {
+  const copy = copyFor();
   const about = copy.about;
 
   return (
-    <Shell lang={lang}>
+    <Shell>
       <PageIntro kicker={about.kicker} title={about.title} lede={about.lede} />
       <Container className="grid items-center gap-10 pb-16 md:grid-cols-[auto_1fr] md:pb-20">
         <div className="flex h-36 w-44 items-center justify-center rounded-3xl border border-line bg-paper text-navy">
@@ -35,8 +34,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
             <p className="measure mt-2 text-ink-soft">{about.placeholderBody}</p>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href={pagePath(lang, "services")}>{copy.nav.services}</ButtonLink>
-            <ButtonLink href={pagePath(lang, "solutions")} variant="ghost">
+            <ButtonLink href={pagePath("services")}>{copy.nav.services}</ButtonLink>
+            <ButtonLink href={pagePath("solutions")} variant="ghost">
               {copy.nav.solutions}
             </ButtonLink>
           </div>

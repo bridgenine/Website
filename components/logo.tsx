@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { pagePath } from "@/lib/paths";
-import type { Lang } from "@/lib/site";
 
 export function Mark({ className = "" }: { className?: string }) {
   return (
@@ -16,16 +15,10 @@ export function Mark({ className = "" }: { className?: string }) {
   );
 }
 
-export function Logo({
-  lang,
-  className = "",
-}: {
-  lang: Lang;
-  className?: string;
-}) {
+export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link
-      href={pagePath(lang, "home")}
+      href={pagePath("home")}
       className={`inline-flex items-center gap-2.5 rounded-full text-navy ${className}`}
     >
       <Mark className="h-8 w-12" />

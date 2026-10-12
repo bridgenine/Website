@@ -4,14 +4,14 @@ Company site for [www.bridgenine.com](https://www.bridgenine.com). Bridgenine is
 
 Pages:
 
-- Home — `/` and `/id/`
-- About — `/about/` and `/id/about/`
-- Services — `/services/` and `/id/services/`
-- Solutions — `/solutions/` and `/id/solutions/`
-- Project Alpha — `/project-alpha/` and `/id/project-alpha/`
-- Contact — `/contact/` and `/id/contact/`
+- Home — `/`
+- About — `/about/`
+- Services — `/services/`
+- Solutions — `/solutions/`
+- Project Alpha — `/project-alpha/`
+- Contact — `/contact/`
 
-English is the default. Bahasa Indonesia lives under `/id/`. The header toggle keeps the current page. No customers, testimonials, case studies, statistics, or prices are invented. Labeled placeholders sit on About (company profile), Services (engagement examples), and Solutions (further offerings).
+The site is English. Indonesian regulatory terms such as PPN, PPh, NPWP, e-Faktur, and KBLI stay as written. No customers, testimonials, case studies, statistics, or prices are invented. Labeled placeholders sit on About (company profile), Services (engagement examples), and Solutions (further offerings).
 
 ## Stack
 
@@ -23,7 +23,7 @@ Colors are defined in `app/globals.css`:
 | --- | --- | --- |
 | White | `#FFFFFF` | Page background |
 | Paper | `#F6F7F9` | Quiet bands |
-| Red | `#C92929` | Buttons, short rules, active language, errors |
+| Red | `#C92929` | Buttons, short rules, errors |
 | Navy | `#1C2340` | Text, logo, lines |
 
 Red `#C92929` is the brightest red in the reference photo. Navy is the deep navy used for text. Red and navy stay small accents on a white page.
@@ -82,7 +82,6 @@ JSON body:
   "email": "ada@example.com",
   "phone": "+628123456789",
   "message": "We would like a demo.",
-  "lang": "en",
   "_subject": "Bridgenine demo request",
   "access_key": "only if NEXT_PUBLIC_CONTACT_ACCESS_KEY is set"
 }
@@ -140,4 +139,4 @@ Use the values from the domain card, not another project’s records. Remove old
 4. For hosts that do not map extensionless paths, use a rewrite such as Nginx `try_files $uri $uri.html $uri/ =404` and point the error page at `/404.html`.
 5. Set the contact variables in the build environment, then rebuild. Static hosts do not read them at request time.
 
-Canonical, Open Graph, Twitter, hreflang, `sitemap.xml`, and `robots.txt` assume `https://www.bridgenine.com`.
+Canonical, Open Graph, Twitter, `sitemap.xml`, and `robots.txt` assume `https://www.bridgenine.com`.

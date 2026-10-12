@@ -5,18 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
 import { copyFor } from "@/lib/content";
-import {
-  normalizePath,
-  pagePath,
-  switchLangPath,
-  type PageId,
-} from "@/lib/paths";
-import type { Lang } from "@/lib/site";
+import { normalizePath, pagePath, type PageId } from "@/lib/paths";
 
 const pages: PageId[] = ["home", "services", "solutions", "about", "contact"];
 
-export function Header({ lang }: { lang: Lang }) {
-  const copy = copyFor(lang);
+export function Header() {
+  const copy = copyFor();
   const pathname = usePathname();
   const current = normalizePath(pathname);
   const [menuPath, setMenuPath] = useState<string | null>(null);
@@ -31,14 +25,14 @@ export function Header({ lang }: { lang: Lang }) {
 
   const items = pages.map((id) => ({
     id,
-    href: pagePath(lang, id),
+    href: pagePath(id),
     label: copy.nav[id],
   }));
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5">
-        <Logo lang={lang} />
+        <Logo />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
           {items.map((item) => {
             const active =
@@ -65,9 +59,8 @@ export function Header({ lang }: { lang: Lang }) {
           })}
         </nav>
         <div className="flex items-center gap-3">
-          <LanguageSwitch lang={lang} pathname={pathname} label={copy.nav.language} />
           <Link
-            href={pagePath(lang, "contact")}
+            href={pagePath("contact")}
             className="hidden min-h-10 items-center rounded-full bg-red px-4 text-sm font-bold text-white hover:bg-red-deep sm:inline-flex"
           >
             {copy.nav.demo}
@@ -93,7 +86,7 @@ export function Header({ lang }: { lang: Lang }) {
           className="fixed inset-0 z-50 flex flex-col bg-white px-6 py-5 lg:hidden"
         >
           <div className="flex items-center justify-between">
-            <Logo lang={lang} />
+            <Logo />
             <button
               type="button"
               className="inline-flex h-10 items-center rounded-full px-3 text-sm font-bold text-red"
@@ -114,7 +107,7 @@ export function Header({ lang }: { lang: Lang }) {
             ))}
           </nav>
           <Link
-            href={pagePath(lang, "contact")}
+            href={pagePath("contact")}
             className="mt-10 inline-flex min-h-12 w-fit items-center rounded-full bg-red px-5 text-sm font-bold text-white"
           >
             {copy.nav.demo}
@@ -122,40 +115,5 @@ export function Header({ lang }: { lang: Lang }) {
         </div>
       ) : null}
     </header>
-  );
-}
-
-function LanguageSwitch({
-  lang,
-  pathname,
-  label,
-}: {
-  lang: Lang;
-  pathname: string;
-  label: string;
-}) {
-  const item = (code: Lang, text: string) => {
-    const active = lang === code;
-    return (
-      <Link
-        href={switchLangPath(pathname, code)}
-        hrefLang={code}
-        lang={code}
-        aria-current={active ? "true" : undefined}
-        className={`px-1 font-bold ${active ? "text-red" : "text-ink-soft hover:text-navy"}`}
-      >
-        {text}
-      </Link>
-    );
-  };
-
-  return (
-    <div className="flex items-center text-sm" aria-label={label}>
-      {item("en", "EN")}
-      <span className="text-line" aria-hidden="true">
-        /
-      </span>
-      {item("id", "ID")}
-    </div>
   );
 }
