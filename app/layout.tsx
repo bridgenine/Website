@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { HtmlLang } from "@/components/html-lang";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -54,7 +55,7 @@ const organization = {
   logo: `${site.url}/logo.svg`,
   description:
     "Bridgenine is a consulting firm that also does workflow automation, including AI-assisted automation, and implementation. Project Alpha is one solution.",
-  knowsLanguage: ["en"],
+  knowsLanguage: ["en", "id"],
 };
 
 export default function RootLayout({
@@ -65,9 +66,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang=location.pathname==="/id"||location.pathname.startsWith("/id/")?"id":"en";`,
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col overflow-x-clip bg-white text-navy">
+        <HtmlLang />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}

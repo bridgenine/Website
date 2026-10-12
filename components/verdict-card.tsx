@@ -1,4 +1,5 @@
 import { copyFor, type ReviewStatus } from "@/lib/content";
+import type { Lang } from "@/lib/site";
 
 function StatusMark({ status }: { status: ReviewStatus }) {
   if (status === "fail") {
@@ -15,8 +16,8 @@ function StatusMark({ status }: { status: ReviewStatus }) {
   return <span className="h-1.5 w-1.5 rounded-full bg-navy" aria-hidden="true" />;
 }
 
-export function VerdictCard() {
-  const copy = copyFor();
+export function VerdictCard({ lang }: { lang: Lang }) {
+  const copy = copyFor(lang);
   const art = copy.illustration;
 
   return (
