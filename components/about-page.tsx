@@ -19,8 +19,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
         <div className="grid gap-4 sm:grid-cols-3">
           {about.points.map((point) => (
             <article key={point.title} className="border-t-2 border-navy pt-4">
-              <h2 className="text-xl font-extrabold text-navy">{point.title}</h2>
-              <p className="mt-2 text-sm text-ink-soft">{point.body}</p>
+              <h2 className="type-title text-navy">{point.title}</h2>
+              <p className="mt-2 text-ink-soft">{point.body}</p>
             </article>
           ))}
         </div>
@@ -31,8 +31,8 @@ export function AboutPage({ lang }: { lang: Lang }) {
             <p className="text-xs font-bold tracking-[0.16em] text-red uppercase">
               {about.placeholderLabel}
             </p>
-            <h2 className="mt-3 text-2xl font-extrabold text-navy">{about.placeholderTitle}</h2>
-            <p className="mt-2 max-w-lg text-ink-soft">{about.placeholderBody}</p>
+            <h2 className="type-title mt-3 text-navy">{about.placeholderTitle}</h2>
+            <p className="measure mt-2 text-ink-soft">{about.placeholderBody}</p>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={pagePath(lang, "services")}>{copy.nav.services}</ButtonLink>

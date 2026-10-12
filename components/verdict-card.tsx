@@ -26,7 +26,7 @@ export function VerdictCard({ lang }: { lang: Lang }) {
         <span className="text-xs font-bold tracking-[0.14em] text-red uppercase">
           {art.label}
         </span>
-        <span className="font-display text-sm font-bold text-navy">{art.invoice}</span>
+        <span className="text-sm font-semibold text-navy">{art.invoice}</span>
       </figcaption>
       <ul className="mt-4 divide-y divide-line">
         {art.rows.map((row) => (

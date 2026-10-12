@@ -19,7 +19,7 @@ export function ContactPage({ lang }: { lang: Lang }) {
           <ol className="mt-5 space-y-5">
             {contact.next.map((step, index) => (
               <li key={step} className="flex gap-4">
-                <span className="font-display text-sm font-bold text-red">0{index + 1}</span>
+                <span className="text-sm font-semibold text-red">0{index + 1}</span>
                 <span className="font-semibold text-navy">{step}</span>
               </li>
             ))}

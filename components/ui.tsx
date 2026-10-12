@@ -59,11 +59,11 @@ export function PageIntro({
 }) {
   return (
     <header className="bg-white">
-      <Container className="pt-14 pb-6 md:pt-20">
+      <Container className="pt-12 pb-8 md:pt-14">
         <Kicker>{kicker}</Kicker>
-        <h1 className="display mt-5 max-w-4xl text-balance text-navy">{title}</h1>
+        <h1 className="type-hero mt-3 max-w-[28ch] text-navy">{title}</h1>
         {lede ? (
-          <p className="mt-5 max-w-xl text-lg text-pretty text-ink-soft">{lede}</p>
+          <p className="measure mt-4 text-pretty text-ink-soft">{lede}</p>
         ) : null}
       </Container>
     </header>

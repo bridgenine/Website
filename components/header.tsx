@@ -107,7 +107,7 @@ export function Header({ lang }: { lang: Lang }) {
               <Link
                 key={item.id}
                 href={item.href}
-                className="font-display text-4xl font-extrabold tracking-tight text-navy"
+                className="type-section text-navy"
               >
                 {item.label}
               </Link>

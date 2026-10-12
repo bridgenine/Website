@@ -16,8 +16,8 @@ export function SolutionsPage({ lang }: { lang: Lang }) {
           <p className="text-xs font-bold tracking-[0.14em] text-red uppercase">
             {solutions.kicker}
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold text-navy">{solutions.productTitle}</h2>
-          <p className="mt-3 text-ink-soft">{solutions.productBody}</p>
+          <h2 className="type-section mt-3 text-navy">{solutions.productTitle}</h2>
+          <p className="measure mt-3 text-ink-soft">{solutions.productBody}</p>
           <Link
             href={pagePath(lang, "product")}
             className="mt-6 inline-flex text-sm font-bold text-red"
@@ -29,8 +29,8 @@ export function SolutionsPage({ lang }: { lang: Lang }) {
           <p className="text-xs font-bold tracking-[0.16em] text-red uppercase">
             {solutions.placeholderLabel}
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold text-navy">{solutions.placeholderTitle}</h2>
-          <p className="mt-3 text-ink-soft">{solutions.placeholderBody}</p>
+          <h2 className="type-section mt-3 text-navy">{solutions.placeholderTitle}</h2>
+          <p className="measure mt-3 text-ink-soft">{solutions.placeholderBody}</p>
         </article>
       </Container>
     </Shell>

@@ -29,7 +29,7 @@ export function Logo({
       className={`inline-flex items-center gap-2.5 rounded-full text-navy ${className}`}
     >
       <Mark className="h-8 w-12" />
-      <span className="font-display text-[1.15rem] leading-none font-extrabold tracking-tight sm:text-[1.35rem]">
+      <span className="text-lg leading-none font-semibold tracking-tight">
         Bridgenine
       </span>
     </Link>

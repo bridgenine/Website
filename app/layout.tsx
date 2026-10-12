@@ -1,18 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Syne } from "next/font/google";
+import localFont from "next/font/local";
 import { HtmlLang } from "@/components/html-lang";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["600", "700", "800"],
+const inter = localFont({
+  src: "../fonts/InterVariable.woff2",
+  variable: "--font-inter",
+  display: "swap",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -71,7 +67,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${outfit.variable} ${syne.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
       <head>
         <script
