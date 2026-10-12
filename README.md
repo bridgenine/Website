@@ -20,11 +20,11 @@ Colors are defined in `app/globals.css`:
 | Token | Hex | Use |
 | --- | --- | --- |
 | White | `#FFFFFF` | Page background |
-| Paper | `#F7F5F2` | Quiet bands |
-| Red | `#C92B2A` | Buttons, short rules, active language, errors |
+| Paper | `#F6F7F9` | Quiet bands |
+| Red | `#C92929` | Buttons, short rules, active language, errors |
 | Navy | `#1C2340` | Text, logo, lines |
 
-Red `#C92B2A` is the most saturated red sampled from the owner’s reference photo. Navy is the specified deep navy. Red and navy stay small accents on a white page.
+Red `#C92929` is the brightest red in the reference photo. Navy is the deep navy used for text. Red and navy stay small accents on a white page.
 
 The logo in the header is a placeholder wordmark plus a simple bridge SVG (`components/logo.tsx`, `public/logo.svg`, `app/icon.svg`). Replace those files when a final logo exists.
 

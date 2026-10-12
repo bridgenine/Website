@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 /*
-  Palette
-  - White #FFFFFF and off-white #F7F5F2 are the page.
-  - Red #C92B2A is the most saturated red sampled from the reference photo.
-  - Navy #1C2340 is the deep text color. Photo shadows read near-black, so
-    this is the specified navy rather than a zipper sample.
-  Red and navy are accents: buttons, short rules, icons, underlines.
+  Palette sampled from the jacket reference.
+  - White #FFFFFF. The cloth reads as crisp white, about #FEFEFE.
+  - Red #C92929 is the brightest red in the photo (shoulder panels).
+  - Navy #1C2340 is the deep text color. The photo's side panels fall in
+    shadow and read near-black, so the navy is the specified deep navy.
+  Red and navy are accents only: buttons, short rules, icons, underlines.
 */
 
 @theme inline {
   --color-white: #ffffff;
-  --color-paper: #f7f5f2;
+  --color-paper: #f6f7f9;
   --color-ink: #1c2340;
-  --color-ink-soft: #3e4868;
-  --color-line: #e7e2da;
-  --color-red: #c92b2a;
-  --color-red-deep: #a32221;
+  --color-ink-soft: #3d4668;
+  --color-line: #e2e5ee;
+  --color-red: #c92929;
+  --color-red-deep: #a52222;
   --color-navy: #1c2340;
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
@@ -48,12 +48,12 @@ h3 {
 }
 
 ::selection {
-  background: #f6d4d3;
+  background: #f6d4d4;
   color: #1c2340;
 }
 
 :focus-visible {
-  outline: 2px solid #c92b2a;
+  outline: 2px solid #c92929;
   outline-offset: 3px;
 }
 
