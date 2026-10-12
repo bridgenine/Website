@@ -1,15 +1,17 @@
 # Bridgenine
 
-Company site for [www.bridgenine.com](https://www.bridgenine.com). Bridgenine provides workflow automation and consulting services. Project Alpha is one product: a self-hosted, fully offline review system for Indonesian invoices.
+Company site for [www.bridgenine.com](https://www.bridgenine.com). Bridgenine is a consulting firm that also does workflow automation, including AI-assisted automation, and implementation. Project Alpha is one solution: a self-hosted, fully offline review system for Indonesian invoices.
 
 Pages:
 
 - Home — `/` and `/id/`
 - About — `/about/` and `/id/about/`
+- Services — `/services/` and `/id/services/`
+- Solutions — `/solutions/` and `/id/solutions/`
 - Project Alpha — `/project-alpha/` and `/id/project-alpha/`
 - Contact — `/contact/` and `/id/contact/`
 
-English is the default. Bahasa Indonesia lives under `/id/`. The header toggle keeps the current page. No customers, testimonials, statistics, or prices are invented. The About page has a labeled placeholder for company profile details.
+English is the default. Bahasa Indonesia lives under `/id/`. The header toggle keeps the current page. No customers, testimonials, case studies, statistics, or prices are invented. Labeled placeholders sit on About (company profile), Services (engagement examples), and Solutions (further offerings).
 
 ## Stack
 

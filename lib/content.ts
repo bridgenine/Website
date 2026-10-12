@@ -20,6 +20,8 @@ type Copy = {
   nav: {
     home: string;
     about: string;
+    services: string;
+    solutions: string;
     product: string;
     contact: string;
     demo: string;
@@ -38,12 +40,33 @@ type Copy = {
     secondary: string;
     whatTitle: string;
     what: [Card, Card, Card];
-    highlightKicker: string;
-    highlightTitle: string;
-    highlightBody: string;
-    highlightLink: string;
+    servicesLink: string;
+    solutionsKicker: string;
+    solutionsTitle: string;
+    solutionsBody: string;
+    solutionsLink: string;
     ctaTitle: string;
     ctaBody: string;
+  };
+  services: {
+    kicker: string;
+    title: string;
+    lede: string;
+    items: [Card, Card, Card];
+    placeholderLabel: string;
+    placeholderTitle: string;
+    placeholderBody: string;
+  };
+  solutions: {
+    kicker: string;
+    title: string;
+    lede: string;
+    productTitle: string;
+    productBody: string;
+    productLink: string;
+    placeholderLabel: string;
+    placeholderTitle: string;
+    placeholderBody: string;
   };
   about: {
     kicker: string;
@@ -115,6 +138,8 @@ export const dictionary: Record<Lang, Copy> = {
     nav: {
       home: "Home",
       about: "About",
+      services: "Services",
+      solutions: "Solutions",
       product: "Project Alpha",
       contact: "Contact",
       demo: "Talk with us",
@@ -124,49 +149,74 @@ export const dictionary: Record<Lang, Copy> = {
     },
     skip: "Skip to content",
     footer: {
-      line: "Workflow automation and consulting.",
+      line: "Consulting and workflow automation.",
     },
     status: { pass: "Pass", warning: "Warning", fail: "Fail" },
     home: {
-      kicker: "Bridgenine",
-      title: "Workflow automation and consulting.",
-      lede: "We help teams simplify how work gets done.",
+      kicker: "Consulting firm",
+      title: "Consulting, and a lot of workflow automation.",
+      lede: "Business and process advice, automation, and implementation.",
       primary: "Talk with us",
-      secondary: "See Project Alpha",
+      secondary: "See services",
       whatTitle: "What Bridgenine does",
       what: [
         {
-          title: "Workflow automation",
-          body: "Repeated steps, handled in software.",
-        },
-        {
           title: "Consulting",
-          body: "Hands-on help to put the work in place.",
+          body: "Business and process consulting.",
         },
         {
-          title: "Project Alpha",
-          body: "One product: on-site invoice review.",
+          title: "Workflow automation",
+          body: "Including AI-assisted automation.",
+        },
+        {
+          title: "Implementation",
+          body: "We stay through rollout.",
         },
       ],
-      highlightKicker: "One product",
-      highlightTitle: "Project Alpha reviews invoices.",
-      highlightBody: "Offline checks against Indonesian tax rules and KBLI 2020. Pass, warning, or fail.",
-      highlightLink: "Explore Project Alpha",
+      servicesLink: "All services",
+      solutionsKicker: "Solutions",
+      solutionsTitle: "Project Alpha is one solution.",
+      solutionsBody: "On-site invoice review. Other offerings can sit beside it.",
+      solutionsLink: "See solutions",
       ctaTitle: "Tell us about the work.",
-      ctaBody: "Automation, consulting, or a Project Alpha demo.",
+      ctaBody: "Consulting, automation, implementation, or a Project Alpha demo.",
     },
     about: {
       kicker: "About",
-      title: "Workflow automation and consulting.",
-      lede: "Two services for how work gets done. Project Alpha is one product.",
+      title: "A consulting firm that automates the work.",
+      lede: "Advice on the business and the process, then the workflows, including AI-assisted automation, and implementation.",
       points: [
-        { title: "Automation", body: "Software for the steps a team repeats." },
-        { title: "Consulting", body: "Practical help from mapping to rollout." },
-        { title: "Project Alpha", body: "On-site invoice review, when that is the job." },
+        { title: "Consulting", body: "Business and process consulting." },
+        { title: "Workflow automation", body: "Repeated work, including AI-assisted automation." },
+        { title: "Implementation", body: "The change, carried into daily operations." },
       ],
       placeholderLabel: "Placeholder",
       placeholderTitle: "Company profile",
       placeholderBody: "Add registration, office, and team details here.",
+    },
+    services: {
+      kicker: "Services",
+      title: "Consulting and workflow automation.",
+      lede: "How Bridgenine works with a team.",
+      items: [
+        { title: "Consulting", body: "Business and process consulting." },
+        { title: "Workflow automation", body: "Automate repeated work, including with AI." },
+        { title: "Implementation", body: "Put the new way of working into practice." },
+      ],
+      placeholderLabel: "Placeholder",
+      placeholderTitle: "Engagement examples",
+      placeholderBody: "Add real projects here. No sample clients yet.",
+    },
+    solutions: {
+      kicker: "Solutions",
+      title: "Products and solutions.",
+      lede: "Project Alpha is one Bridgenine solution.",
+      productTitle: "Project Alpha",
+      productBody: "Self-hosted, fully offline invoice review.",
+      productLink: "Open Project Alpha",
+      placeholderLabel: "Placeholder",
+      placeholderTitle: "More solutions",
+      placeholderBody: "Add the next offering here.",
     },
     product: {
       kicker: "Project Alpha",
@@ -266,14 +316,24 @@ export const dictionary: Record<Lang, Copy> = {
     },
     meta: {
       home: {
-        title: "Bridgenine — Workflow automation and consulting",
+        title: "Bridgenine — Consulting and workflow automation",
         description:
-          "Bridgenine provides workflow automation and consulting services. Project Alpha is a product for on-site invoice review.",
+          "Bridgenine is a consulting firm for business and process work, workflow automation, AI-assisted automation, and implementation. Project Alpha is one solution.",
       },
       about: {
         title: "About",
         description:
-          "Bridgenine offers workflow automation and consulting. Project Alpha is one product.",
+          "Bridgenine consults on how work gets done, automates workflows, and stays for implementation. Project Alpha is one solution.",
+      },
+      services: {
+        title: "Services",
+        description:
+          "Bridgenine services: business and process consulting, workflow automation including AI-assisted automation, and implementation.",
+      },
+      solutions: {
+        title: "Solutions",
+        description:
+          "Bridgenine solutions. Project Alpha is one of them: self-hosted, offline invoice review.",
       },
       product: {
         title: "Project Alpha",
@@ -282,7 +342,7 @@ export const dictionary: Record<Lang, Copy> = {
       },
       contact: {
         title: "Contact",
-        description: "Talk with Bridgenine about workflow automation, consulting, or Project Alpha.",
+        description: "Talk with Bridgenine about consulting, workflow automation, or Project Alpha.",
       },
     },
   },
@@ -290,6 +350,8 @@ export const dictionary: Record<Lang, Copy> = {
     nav: {
       home: "Beranda",
       about: "Tentang",
+      services: "Layanan",
+      solutions: "Solusi",
       product: "Project Alpha",
       contact: "Kontak",
       demo: "Hubungi kami",
@@ -299,40 +361,65 @@ export const dictionary: Record<Lang, Copy> = {
     },
     skip: "Loncat ke isi",
     footer: {
-      line: "Otomatisasi alur kerja dan konsultasi.",
+      line: "Konsultasi dan otomatisasi alur kerja.",
     },
     status: { pass: "Lulus", warning: "Peringatan", fail: "Gagal" },
     home: {
-      kicker: "Bridgenine",
-      title: "Otomatisasi alur kerja dan konsultasi.",
-      lede: "Kami membantu tim menyederhanakan cara kerja.",
+      kicker: "Firma konsultasi",
+      title: "Konsultasi, dan banyak otomatisasi alur kerja.",
+      lede: "Saran bisnis dan proses, otomatisasi, serta implementasi.",
       primary: "Hubungi kami",
-      secondary: "Lihat Project Alpha",
+      secondary: "Lihat layanan",
       whatTitle: "Yang Bridgenine kerjakan",
       what: [
-        { title: "Otomatisasi alur kerja", body: "Langkah berulang dikerjakan oleh perangkat lunak." },
-        { title: "Konsultasi", body: "Bantuan langsung untuk menjalankannya." },
-        { title: "Project Alpha", body: "Satu produk: tinjauan faktur di tempat." },
+        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
+        { title: "Otomatisasi alur kerja", body: "Termasuk otomatisasi berbantuan AI." },
+        { title: "Implementasi", body: "Kami dampingi sampai penerapan." },
       ],
-      highlightKicker: "Satu produk",
-      highlightTitle: "Project Alpha meninjau faktur.",
-      highlightBody: "Pemeriksaan offline terhadap aturan pajak Indonesia dan KBLI 2020. Lulus, peringatan, atau gagal.",
-      highlightLink: "Jelajahi Project Alpha",
+      servicesLink: "Semua layanan",
+      solutionsKicker: "Solusi",
+      solutionsTitle: "Project Alpha adalah salah satu solusi.",
+      solutionsBody: "Tinjauan faktur di tempat. Penawaran lain bisa berdampingan.",
+      solutionsLink: "Lihat solusi",
       ctaTitle: "Ceritakan pekerjaannya.",
-      ctaBody: "Otomatisasi, konsultasi, atau demo Project Alpha.",
+      ctaBody: "Konsultasi, otomatisasi, implementasi, atau demo Project Alpha.",
     },
     about: {
       kicker: "Tentang",
-      title: "Otomatisasi alur kerja dan konsultasi.",
-      lede: "Dua layanan untuk cara kerja. Project Alpha adalah satu produk.",
+      title: "Firma konsultasi yang mengotomatisasi pekerjaan.",
+      lede: "Saran bisnis dan proses, lalu alur kerja termasuk otomatisasi berbantuan AI, dan implementasi.",
       points: [
-        { title: "Otomatisasi", body: "Perangkat lunak untuk langkah yang berulang." },
-        { title: "Konsultasi", body: "Bantuan praktis, dari pemetaan sampai penerapan." },
-        { title: "Project Alpha", body: "Tinjauan faktur di tempat, bila itu pekerjaannya." },
+        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
+        { title: "Otomatisasi alur kerja", body: "Pekerjaan berulang, termasuk berbantuan AI." },
+        { title: "Implementasi", body: "Perubahan dibawa ke operasi harian." },
       ],
       placeholderLabel: "Placeholder",
       placeholderTitle: "Profil perusahaan",
       placeholderBody: "Tambahkan legalitas, kantor, dan tim di sini.",
+    },
+    services: {
+      kicker: "Layanan",
+      title: "Konsultasi dan otomatisasi alur kerja.",
+      lede: "Cara Bridgenine bekerja dengan sebuah tim.",
+      items: [
+        { title: "Konsultasi", body: "Konsultasi bisnis dan proses." },
+        { title: "Otomatisasi alur kerja", body: "Otomatisasi pekerjaan berulang, termasuk dengan AI." },
+        { title: "Implementasi", body: "Cara kerja baru dijalankan di lapangan." },
+      ],
+      placeholderLabel: "Placeholder",
+      placeholderTitle: "Contoh pekerjaan",
+      placeholderBody: "Tambahkan proyek nyata di sini. Belum ada klien contoh.",
+    },
+    solutions: {
+      kicker: "Solusi",
+      title: "Produk dan solusi.",
+      lede: "Project Alpha adalah salah satu solusi Bridgenine.",
+      productTitle: "Project Alpha",
+      productBody: "Tinjauan faktur offline yang dihosting sendiri.",
+      productLink: "Buka Project Alpha",
+      placeholderLabel: "Placeholder",
+      placeholderTitle: "Solusi lain",
+      placeholderBody: "Tambahkan penawaran berikutnya di sini.",
     },
     product: {
       kicker: "Project Alpha",
@@ -426,14 +513,24 @@ export const dictionary: Record<Lang, Copy> = {
     },
     meta: {
       home: {
-        title: "Bridgenine — Otomatisasi alur kerja dan konsultasi",
+        title: "Bridgenine — Konsultasi dan otomatisasi alur kerja",
         description:
-          "Bridgenine menyediakan otomatisasi alur kerja dan layanan konsultasi. Project Alpha adalah produk untuk tinjauan faktur di tempat.",
+          "Bridgenine adalah firma konsultasi untuk bisnis dan proses, otomatisasi alur kerja, otomatisasi berbantuan AI, dan implementasi. Project Alpha adalah salah satu solusi.",
       },
       about: {
         title: "Tentang",
         description:
-          "Bridgenine menawarkan otomatisasi alur kerja dan konsultasi. Project Alpha adalah satu produk.",
+          "Bridgenine memberi konsultasi cara kerja, mengotomatisasi alur kerja, dan mendampingi implementasi. Project Alpha adalah salah satu solusi.",
+      },
+      services: {
+        title: "Layanan",
+        description:
+          "Layanan Bridgenine: konsultasi bisnis dan proses, otomatisasi alur kerja termasuk berbantuan AI, dan implementasi.",
+      },
+      solutions: {
+        title: "Solusi",
+        description:
+          "Solusi Bridgenine. Project Alpha adalah salah satunya: tinjauan faktur offline yang dihosting sendiri.",
       },
       product: {
         title: "Project Alpha",
@@ -442,7 +539,7 @@ export const dictionary: Record<Lang, Copy> = {
       },
       contact: {
         title: "Kontak",
-        description: "Hubungi Bridgenine untuk otomatisasi alur kerja, konsultasi, atau Project Alpha.",
+        description: "Hubungi Bridgenine untuk konsultasi, otomatisasi alur kerja, atau Project Alpha.",
       },
     },
   },

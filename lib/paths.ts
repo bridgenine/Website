@@ -1,10 +1,12 @@
 import type { Lang } from "@/lib/site";
 
-export type PageId = "home" | "about" | "product" | "contact";
+export type PageId = "home" | "about" | "services" | "solutions" | "product" | "contact";
 
 const slugs: Record<PageId, string> = {
   home: "",
   about: "about",
+  services: "services",
+  solutions: "solutions",
   product: "project-alpha",
   contact: "contact",
 };

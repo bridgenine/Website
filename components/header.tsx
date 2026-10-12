@@ -13,7 +13,7 @@ import {
 } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
-const pages: PageId[] = ["home", "about", "product", "contact"];
+const pages: PageId[] = ["home", "services", "solutions", "about", "contact"];
 
 export function Header({ lang }: { lang: Lang }) {
   const copy = copyFor(lang);
@@ -39,9 +39,11 @@ export function Header({ lang }: { lang: Lang }) {
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5">
         <Logo lang={lang} />
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
           {items.map((item) => {
-            const active = current === item.href;
+            const active =
+              current === item.href ||
+              (item.id === "solutions" && current.includes("/project-alpha"));
             return (
               <Link
                 key={item.id}
@@ -72,7 +74,7 @@ export function Header({ lang }: { lang: Lang }) {
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-navy md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-navy lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setMenuPath(open ? null : current)}
@@ -88,7 +90,7 @@ export function Header({ lang }: { lang: Lang }) {
       {open ? (
         <div
           id="mobile-nav"
-          className="fixed inset-0 z-50 flex flex-col bg-white px-6 py-5 md:hidden"
+          className="fixed inset-0 z-50 flex flex-col bg-white px-6 py-5 lg:hidden"
         >
           <div className="flex items-center justify-between">
             <Logo lang={lang} />

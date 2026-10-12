@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { VerdictCard } from "@/components/verdict-card";
 import { Shell } from "@/components/shell";
 import { ButtonLink, Container, Kicker, PageIntro } from "@/components/ui";
 import { copyFor } from "@/lib/content";
@@ -28,6 +30,14 @@ export function ProductPage({ lang }: { lang: Lang }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <PageIntro kicker={product.kicker} title={product.title} lede={product.lede} />
+      <Container className="pb-4">
+        <Link href={pagePath(lang, "solutions")} className="text-sm font-bold text-red">
+          {copyFor(lang).nav.solutions}
+        </Link>
+      </Container>
+      <Container className="max-w-xl pb-8">
+        <VerdictCard lang={lang} />
+      </Container>
 
       <section className="bg-white">
         <Container className="pb-16">

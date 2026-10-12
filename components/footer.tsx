@@ -4,7 +4,7 @@ import { copyFor } from "@/lib/content";
 import { pagePath, type PageId } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
-const pages: PageId[] = ["home", "about", "product", "contact"];
+const pages: PageId[] = ["home", "services", "solutions", "product", "about", "contact"];
 
 export function Footer({ lang }: { lang: Lang }) {
   const copy = copyFor(lang);

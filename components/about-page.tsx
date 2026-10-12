@@ -6,7 +6,8 @@ import { pagePath } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
 export function AboutPage({ lang }: { lang: Lang }) {
-  const about = copyFor(lang).about;
+  const copy = copyFor(lang);
+  const about = copy.about;
 
   return (
     <Shell lang={lang}>
@@ -33,9 +34,12 @@ export function AboutPage({ lang }: { lang: Lang }) {
             <h2 className="mt-3 text-2xl font-extrabold text-navy">{about.placeholderTitle}</h2>
             <p className="mt-2 max-w-lg text-ink-soft">{about.placeholderBody}</p>
           </div>
-          <ButtonLink href={pagePath(lang, "product")} variant="ghost" className="mt-8">
-            Project Alpha
-          </ButtonLink>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href={pagePath(lang, "services")}>{copy.nav.services}</ButtonLink>
+            <ButtonLink href={pagePath(lang, "solutions")} variant="ghost">
+              {copy.nav.solutions}
+            </ButtonLink>
+          </div>
         </Container>
       </section>
     </Shell>

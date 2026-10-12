@@ -12,7 +12,7 @@ const shareImage = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Bridgenine — workflow automation and consulting",
+  alt: "Bridgenine — consulting and workflow automation",
 };
 
 export function metadataFor(lang: Lang, page: PageId): Metadata {

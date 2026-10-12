@@ -1,13 +1,13 @@
-import { VerdictCard } from "@/components/verdict-card";
+import Link from "next/link";
 import { Shell } from "@/components/shell";
 import { ButtonLink, Container, Kicker } from "@/components/ui";
-import { IconFile, IconFlow, IconUsers } from "@/components/icons";
+import { IconBuilding, IconFlow, IconUsers } from "@/components/icons";
 import { Mark } from "@/components/logo";
-import { copyFor, regulationTags } from "@/lib/content";
+import { copyFor } from "@/lib/content";
 import { pagePath } from "@/lib/paths";
 import type { Lang } from "@/lib/site";
 
-const whatIcons = [IconFlow, IconUsers, IconFile];
+const whatIcons = [IconUsers, IconFlow, IconBuilding];
 
 export function HomePage({ lang }: { lang: Lang }) {
   const copy = copyFor(lang);
@@ -17,13 +17,13 @@ export function HomePage({ lang }: { lang: Lang }) {
     <Shell lang={lang}>
       <section className="bg-white">
         <Container className="grid items-center gap-12 py-14 md:grid-cols-[1.05fr_0.95fr] md:py-20">
-          <div>
+          <div className="min-w-0">
             <Kicker>{home.kicker}</Kicker>
             <h1 className="display mt-5 text-balance text-navy">{home.title}</h1>
             <p className="mt-5 max-w-md text-lg text-ink-soft">{home.lede}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href={pagePath(lang, "contact")}>{home.primary}</ButtonLink>
-              <ButtonLink href={pagePath(lang, "product")} variant="ghost">
+              <ButtonLink href={pagePath(lang, "services")} variant="ghost">
                 {home.secondary}
               </ButtonLink>
             </div>
@@ -56,30 +56,36 @@ export function HomePage({ lang }: { lang: Lang }) {
               );
             })}
           </div>
+          <ButtonLink href={pagePath(lang, "services")} variant="ghost" className="mt-8">
+            {home.servicesLink}
+          </ButtonLink>
         </Container>
       </section>
 
       <section className="border-t border-line bg-paper">
         <Container className="grid items-center gap-10 py-16 md:grid-cols-2 md:py-20">
           <div>
-            <Kicker>{home.highlightKicker}</Kicker>
+            <Kicker>{home.solutionsKicker}</Kicker>
             <h2 className="mt-4 font-display text-4xl font-extrabold text-balance text-navy md:text-5xl">
-              {home.highlightTitle}
+              {home.solutionsTitle}
             </h2>
-            <p className="mt-4 max-w-md text-lg text-ink-soft">{home.highlightBody}</p>
-            <ButtonLink href={pagePath(lang, "product")} variant="ghost" className="mt-8">
-              {home.highlightLink}
+            <p className="mt-4 max-w-md text-lg text-ink-soft">{home.solutionsBody}</p>
+            <ButtonLink href={pagePath(lang, "solutions")} variant="ghost" className="mt-8">
+              {home.solutionsLink}
             </ButtonLink>
-            <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2" aria-label={regulationTags.join(", ")}>
-              {regulationTags.map((tag, index) => (
-                <li key={tag} className="inline-flex items-center gap-3 text-sm font-semibold text-navy">
-                  {index > 0 ? <span className="h-1 w-1 rounded-full bg-red" aria-hidden="true" /> : null}
-                  {tag}
-                </li>
-              ))}
-            </ul>
           </div>
-          <VerdictCard lang={lang} />
+          <Link
+            href={pagePath(lang, "product")}
+            className="block rounded-3xl border border-line bg-white p-6"
+          >
+            <p className="text-xs font-bold tracking-[0.14em] text-red uppercase">
+              {copy.solutions.kicker}
+            </p>
+            <p className="mt-4 font-display text-3xl font-extrabold text-navy">
+              {copy.solutions.productTitle}
+            </p>
+            <p className="mt-2 text-ink-soft">{copy.solutions.productBody}</p>
+          </Link>
         </Container>
       </section>
 

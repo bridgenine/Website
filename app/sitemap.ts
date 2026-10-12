@@ -6,7 +6,9 @@ export const dynamic = "force-static";
 
 const pages: { id: PageId; priority: number }[] = [
   { id: "home", priority: 1 },
-  { id: "product", priority: 0.9 },
+  { id: "services", priority: 0.9 },
+  { id: "solutions", priority: 0.8 },
+  { id: "product", priority: 0.8 },
   { id: "about", priority: 0.7 },
   { id: "contact", priority: 0.6 },
 ];
